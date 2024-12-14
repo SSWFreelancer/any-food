@@ -1,0 +1,63 @@
+@import '@/style/variables.sass'
+
+.cart
+    padding: 50px 0
+    @media (max-width: $md) 
+        padding: 40px 0
+    &__success
+        padding: 10px
+        background: #14b129
+        color: #FFFFFF
+        text-align: center
+        font-size: 12px
+        margin: 0 auto
+        font-weight: 400
+        width: 100%
+        & a
+            text-decoration: underline
+            color: #FFFFFF
+            text-decoration-skip-ink: none
+
+    &__container
+        display: grid
+        gap: 40px
+        grid-template-columns: 1fr 1fr
+        @media (max-width: $md) 
+            display: flex
+            flex-direction: column-reverse
+            gap: 30px
+        
+    &__form
+        display: flex
+        flex-direction: column
+        gap: 15px
+        & button
+            outline: none
+            font-size: 14px
+            padding: 10px
+            background: $yellow
+            transition: all 0.3s ease 0s
+            color: #FFFFFF
+            @media (any-hover: hover)
+                &:hover
+                    background: $orange
+
+    &__input
+        display: flex
+        flex-direction: column
+        gap: 8px
+        & span
+            font-size: 14px
+            color: rgba(0,0,0,0.6)
+        & input, & textarea
+            border:1px solid $gray
+            width: 100%
+            min-width: 0
+            padding: 10px
+            outline: none
+            font-size: 14px
+        
+        & textarea
+            min-height: 40px
+            height: 80px
+            max-height: 130px

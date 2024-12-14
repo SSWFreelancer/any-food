@@ -1,0 +1,45 @@
+@import '@/style/variables.sass'
+
+.filters
+    background: $gray
+    &__container
+        display: flex
+        align-items: center
+        justify-content: center
+        padding-right: 0
+        gap: 12px
+
+    &__title
+        font-weight: 500
+        font-size: 18px
+
+    &__menu
+        padding-right: 9px
+        overflow-x: auto
+        display: flex
+        align-items: center
+        &::-webkit-scrollbar
+            width: 0
+            height: 0
+
+    &__item
+        cursor: pointer
+        padding: 12px 6px
+        position: relative
+        transition: color 0.3s ease 0s
+        &::after
+            content:''
+            position: absolute
+            bottom: 0
+            left: 50%
+            width: 0
+            height: 2px
+            background: $orange
+            transition: all 0.3s ease 0s
+
+        &.active
+            color: $orange
+            &::after
+                width: 100%
+                left: 0
+

@@ -1,0 +1,74 @@
+@import '@/style/variables.sass'
+.menu
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 30px
+    @media (max-width: $md) 
+        grid-template-columns: 1fr
+    
+    &__body
+        display: flex
+        flex-direction: column
+        gap: 10px
+
+    &__dish
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 15px
+        border: 1px solid $gray
+        padding: 20px
+
+    &__left
+        display: flex
+        flex-direction: column
+        gap: 8px
+
+    &__name
+        font-size: 20px
+        font-weight: 700
+
+    &__ingredients
+        font-size: 16px
+
+    &__price
+        margin-top: 5px
+        font-weight: 700
+        color: $yellow
+        font-size: 20px
+
+    &__quantity
+        display: flex
+        flex-direction: column
+        gap: 5px
+        flex: 0 0 62px
+        width: 62px
+        & input
+            color: rgba(0,0,0,0.6)
+            font-weight: 500
+            width: 100%
+            min-width: 0
+            text-align: center
+            -moz-appearance: textfield
+            outline: none
+            &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+                margin: 0
+                -webkit-appearance: none
+
+    &__buttons
+        width: 100%
+        display: flex
+        gap: 2px
+        & button
+            user-select: none
+            outline: none
+            background: $yellow
+            flex: 0 0 30px
+            width: 30px
+            color: #FFFFFF
+            text-align: center
+            height: 30px
+            @media (any-hover: hover)
+                transition: all 0.3s ease 0s
+                &:hover
+                    background: $orange

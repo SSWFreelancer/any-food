@@ -1,0 +1,62 @@
+@import './variables.sass'
+
+.header
+    background: $black
+    color: #FFFFFF
+    padding: 16px 0
+    &__container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 16px
+        @media (max-width: $sm) 
+            gap: 10px
+        
+    &__back
+        display: flex
+        align-items: center
+        gap: 6px
+        text-transform: capitalize
+        color: #FFFFff
+        & img
+            flex: 0 0 16px
+            width: 16px
+        &.hidden
+            pointer-events: none
+            opacity: 0
+            visibility: hidden
+
+        @media (max-width: $sm)
+            flex: 0 0 80px
+            width: 80px
+            &.hidden
+                display: none
+            & span
+                display: none
+        
+    &__logo
+        flex: 0 0 115px
+        width: 115px
+        @media (max-width: $sm)
+            flex: 1 1 auto
+            width: 100%
+            max-width: 115px
+
+        & img
+            width: 100%
+
+    &__currencies
+        display: flex
+        align-items: center
+        gap: 8px
+        text-transform: uppercase
+        & p
+            cursor: pointer
+            transition: all 0.3s ease 0s
+            &.active
+                color: $yellow
+
+        @media (max-width: $sm) 
+            gap: 6px
+            font-size: 14px
+        

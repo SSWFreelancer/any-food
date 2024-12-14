@@ -1,0 +1,98 @@
+@import '@/style/variables.sass'
+
+.reviews 
+    display: flex
+    flex-direction: column
+    gap: 10px
+    &__item
+        border: 1px solid $gray
+        padding: 20px
+        display: flex
+        flex-direction: column
+        gap: 15px
+        & input, & textarea
+            font-size: 14px
+            border: 1px solid $gray
+            padding: 10px
+            outline: none
+            &::placeholder
+                transition: all 0.3s ease 0s
+            &:focus::placeholder
+                opacity: 0
+
+        & textarea
+            resize-x: none
+            height: 80px
+            min-height: 40px
+            max-height: 150px
+
+        & button
+            width: 100%
+            outline: none
+            text-align: center
+            color: #FFFFFF
+            background: $yellow
+            padding: 11px 0
+            font-size: 14px
+            max-width: 200px
+            @media (any-hover: hover)
+                transition: all 0.3s ease 0s
+                &:hover
+                    background: $orange
+
+    &__top
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-wrap: wrap
+        gap: 10px
+
+    &__name
+        font-size: 20px
+        font-weight: 700
+
+    &__stars
+        margin-left: auto
+        display: flex
+        align-items: center
+        gap: 2px
+        & img
+            flex: 0 0 16px
+            width: 16px
+        
+    &__rating
+        display: flex
+        align-items: center
+        gap: 10px
+
+    &__userstars
+        display: flex
+        align-items: center
+        flex-direction: row-reverse
+        gap: 2px
+        position: relative
+        & label
+            flex:0 0 16px
+            width: 16px
+            height: 16px
+            margin-bottom: 0
+            cursor: pointer
+            & img
+                width: 100%
+                &:first-child
+                    display: none
+        & input
+            position: absolute
+            right: 0
+            top: 0
+            width: 16px
+            height: 16px
+            opacity: 0
+            pointer-events: none
+            &:checked ~ label img
+                &:first-child
+                    display: block
+                &:last-child
+                    display: none
+
+        
