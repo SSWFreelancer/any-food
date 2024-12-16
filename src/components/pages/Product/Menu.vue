@@ -44,6 +44,7 @@
             </div>
             <Basket/>
         </div>
+        {{ cartItems }}
     </div>
 </template>
 
@@ -69,13 +70,16 @@ export default class Menu extends Mixins(
         setTimeout(() => this.loaded = true, 1000);
     }
     
-    created(){
+    created() {
+        const savedCartItems = JSON.parse(sessionStorage.getItem("cartItems") || "[]");
+
         this.dishes.forEach((dish) => {
             if (this.menu.includes(dish.id)) {
-                this.items.push(dish)
-                this.$set(this.quantities, dish.id, 0)
+                this.items.push(dish);
+                const savedItem = savedCartItems.find((item: { id: string; quantity: number }) => item.id === dish.id);
+                this.$set(this.quantities, dish.id, savedItem ? savedItem.quantity : 0);
             }
-        })
+        });
     }
 
     get activeCurrency(){

@@ -7,6 +7,13 @@ import '@/style/index.sass';
 
 Vue.config.productionTip = false;
 
+const userName = sessionStorage.getItem("userName");
+if (userName) {
+  store.commit("auth/setName", userName);
+}else{
+  router.push("/login");
+}
+
 new Vue({
   router,
   store,

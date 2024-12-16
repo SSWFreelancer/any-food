@@ -1,11 +1,11 @@
 <template>
   <div class="header">
     <div class="header__container">
-      <router-link to="/" :class="isHomePage ? 'header__back hidden' : 'header__back'">
+      <router-link to="/" :class="isHomePage || isLoginPage ? 'header__back hidden' : 'header__back'">
         <img src="@/assets/arrow.svg" alt="">
         <span>restaurants</span>
       </router-link>
-      <router-link to="/" class="header__logo">
+      <router-link :to="isLoginPage ? '/login' : '/'" class="header__logo">
         <img src="@/assets/logo.svg" alt="">
       </router-link>
       <div class="header__currencies">
@@ -37,6 +37,9 @@ export default class Header extends Vue {
 
   get isHomePage(): boolean {
     return this.$route.path === "/";
+  }
+  get isLoginPage(): boolean {
+    return this.$route.path === "/login";
   }
 
 }

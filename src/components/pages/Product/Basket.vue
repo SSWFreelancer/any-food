@@ -18,7 +18,7 @@
                             {{ item.price.EUR * item.quantity }} €
                         </span>
                         <span v-if="activeCurrency === 'RUB'">
-                            {{ item.price.RUB * item.quantity }} €
+                            {{ item.price.RUB * item.quantity }} ₽
                         </span>
                     </p>
                 </div>

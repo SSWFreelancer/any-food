@@ -20,7 +20,6 @@
             <div class="reviews__name">
                 Leave your review
             </div>
-            <input v-model="newReview.userName" type="text" placeholder="Your name" required />
             <textarea v-model="newReview.text" placeholder="Your review" required></textarea>
             <div class="reviews__rating">
                 <p>Rating</p>
@@ -67,7 +66,7 @@ export default class Reviews extends Mixins(ReviewsMixin) {
     @Prop() reviewsIds!: string[];
     reviewsArr: IReview[] = [];
     newReview: IReview = {
-        userName: "",
+        userName: this.$store.state.auth.name,
         text: "",
         rating: 0,
         id: "", 
